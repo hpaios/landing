@@ -1,0 +1,32 @@
+@use 'variables' as var;
+
+.lang-buttons {
+  width: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    display: inline-block;
+    text-decoration: none;
+    font: 400 16px/1.2 'Futura PT', sans-serif;
+    color: var.$text-color;
+    padding: 0 5px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all  .5s ease-in-out;
+    }
+  }
+  span {
+    display: inline-block;
+    font: 400 16px/16px 'Futura PT', sans-serif;
+
+    &.lang {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: url('./../images/lang.svg');
+      margin: 0 10px 0 0;
+    }
+  }
+}
