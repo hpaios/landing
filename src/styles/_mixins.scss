@@ -1,14 +1,13 @@
-$tablet-width: 767px;
-$desktop-width: 1280px;
+@use 'variables' as var;
 
 @mixin tablet {
-  @media (min-width: #{$tablet-width}) {
+  @media (min-width: #{var.$tablet-width}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop-width}) {
+  @media (min-width: #{var.$desktop-width}) {
     @content;
   }
 }

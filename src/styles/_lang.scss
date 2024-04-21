@@ -5,16 +5,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var.$bg-color;
+
   a {
     display: inline-block;
     text-decoration: none;
     font: 400 16px/1.2 'Futura PT', sans-serif;
-    color: var.$text-color;
+    color: var.$bg-color;
     padding: 0 5px;
 
     &:hover {
       transform: scale(1.1);
       transition: all  .5s ease-in-out;
+    }
+
+    @include desktop {
+      color: var.$text-color;
     }
   }
   span {
@@ -27,6 +33,10 @@
       height: 22px;
       background: url('./../images/lang.svg');
       margin: 0 10px 0 0;
+    }
+
+    @include desktop {
+      color: var.$text-color;
     }
   }
 }

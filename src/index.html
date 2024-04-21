@@ -6,23 +6,46 @@
     <title>???</title>
   </head>
   <body>
-    <section class='hero' id='hero'>
+    <section class='hero' id='coach'>
       <div class="wrapper">
         <div class="container">
-          <div class="lang-buttons">
-            <span class="lang"></span>
-            <a href="#" class="button active" id='ru-lang'>
-              RU
+          <header>
+            <a href="#coach">
+              <img src="./images/logo.svg" alt="logo" class="logo">
             </a>
-            <span>|</span>
-            <a href="#" class="button" id='uk-lang'>
-              UA
-            </a>
-          </div>
+            <nav>
+              <input id="menu-toggle" type="checkbox"/>
+              <label class="menu-btn" for="menu-toggle">
+                <span></span>
+              </label>
+              <div class="menu-box">
+                <span class='logo-menu'></span>
+                <ul>
+                  <li><a class="ru-lang" href="#">cотрудничество</a></li>
+                  <li><a class="ua-lang" href="#">cпівпраця</a></li>
+                  <li><a class="ru-lang" href="#">гарантии</a></li>
+                  <li><a class="ua-lang" href="#">гарантії</a></li>
+                  <li><a class="ru-lang" href="#">контакты</a></li>
+                  <li><a class="ua-lang" href="#">контакти</a></li>
+                </ul>
+                <div class="lang-buttons">
+                  <span class="lang"></span>
+                  <a href="#" class="button active" id='ru-lang'>
+                    RU
+                  </a>
+                  <span>|</span>
+                  <a href="#" class="button" id='ua-lang'>
+                    UA
+                  </a>
+                </div>
+              </div>
+              <div class="overlay"></div>
+            </nav>
+          </header>
             <h1 class="ru-lang">
               Александр Подкопай
             </h1>
-            <h1 class="uk-lang">
+            <h1 class="ua-lang">
               Олександр Підкопай
             </h1>
         </div>
