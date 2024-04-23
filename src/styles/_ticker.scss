@@ -1,0 +1,74 @@
+@use 'variables' as var;
+
+.ticker {
+  font: 450 18px/1.2 'Futura PT', sans-serif;
+  background: var.$bg-color;
+  color: var.$text-gray;
+  text-transform: uppercase;
+  padding: 20px 0;
+  border-top: 1px solid var.$text-gray;
+  border-bottom: 1px solid var.$text-gray;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @include tablet {
+    font: 450 24px/1.2 'Futura PT', sans-serif;
+    padding: 30px 0;
+  }
+
+  @include desktop {
+    font: 450 43px/1.2 'Futura PT', sans-serif;
+  }
+
+  > div {
+    display: flex;
+    width: 300%;
+    -webkit-animation: ticker 10s linear infinite;
+    -moz-animation: ticker 10s linear infinite;
+    animation: ticker 10s linear infinite;
+
+    @include tablet {
+      width: 200%;
+    }
+
+    div {
+      white-space: nowrap;
+      width: 100%;
+    }
+  }
+
+  @keyframes ticker {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%)
+    }
+ }
+ 
+  @-webkit-keyframes ticker {
+    from {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    to {
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+ 
+  @-moz-keyframes ticker {
+    from {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    to {
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+}

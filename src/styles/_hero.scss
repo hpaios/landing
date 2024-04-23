@@ -1,16 +1,148 @@
 @use 'variables' as var;
 @import "mixins";
 
-h1 {
-  font: 700 35px/1.2 'Futura PT', sans-serif;
-  text-transform: uppercase;
-  text-align: center;
+.hero {
 
-  @include tablet {
-    font: 700 47px/1.2 'Futura PT', sans-serif;
+  .container {
+    height: calc(100vh - 60px);
+  }
+  .logo {
+    display: inline-block;
+    width: 82px;
+    height: 61px;
+
+    @include tablet {
+      width: 133px;
+      height: 98px;
+    }
+
+    img {
+      object-fit: cover;
+      width: auto;
+      height: auto;
+
+      @include tablet {
+        max-width: max-content;
+      }
+
+    }
+  }
+  h1 {
+    font: 700 35px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 30px 0 auto;
+    width: 100%;
+  
+    @include tablet {
+      font: 700 47px/1.2 'Futura PT', sans-serif;
+      width: 50%;
+      margin: 75px 0 25px 0;
+      text-align: left;
+    }
+  
+    @include desktop {
+      font: 700 73px/1.2 'Futura PT', sans-serif;
+    }
+  }
+  
+  h3 {
+    font: 450 18px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px 0 auto;
+    color: var.$dark-gray;
+    width: 100%;
+  
+    @include tablet {
+      font: 450 24px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      width: 50%;
+    }
+  
+    @include desktop {
+      font: 450 28px/1.2 'Futura PT', sans-serif;
+    }
+  }
+  
+  &#coach {
+    position: relative;
+    // background: url(./../images/blue-bg-mob.svg) no-repeat 50% 50%;
+    // background-size: auto;
+
+    @include tablet {
+      background: url(./../images/blue-bg-tablet.svg) no-repeat 80% 0;
+      background-size: auto;
+    }
+  
+    @include desktop {
+      background: url(./../images/blue-bg.svg) no-repeat 67% 0;
+    }
+  
+    .photo-container {
+      height: 100%;
+      max-width: 320px;
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0 0 0;
+      top: 30px;
+      background: url(./../images/blue-bg-mob.svg) no-repeat 40% 0;
+      background-size: auto;
+
+      @include tablet {
+        float: right;
+        max-width: 522px;
+        padding: 0;
+        top: -278px;
+        right: -10%;
+        background: none;
+      }
+    
+      @include desktop {
+        float: right;
+        height: 100%;
+        max-width: 50%;
+        position: relative;
+        top: -450px;
+        right: 90px;
+        background: none;
+      }
+  
+      img {
+        object-fit: fill;
+        width: auto;
+        height: auto;
+      }
+    }
   }
 
-  @include desktop {
-    font: 700 73px/1.2 'Futura PT', sans-serif;
+  .link {
+    font: 450 24px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 50px auto 0;
+    color: var.$text-color;
+    text-decoration: none;
+    width: 100%;
+  
+    @include tablet {
+      font: 700 47px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 700 73px/1.2 'Futura PT', sans-serif;
+    }
+  }
+  
+  .tagline {
+    display: none !important;
+  
+    @include tablet {
+      font: 700 47px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 700 73px/1.2 'Futura PT', sans-serif;
+    }
   }
 }

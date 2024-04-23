@@ -42,6 +42,7 @@ header {
   
     .menu-btn {
       display: flex;
+      overflow: hidden;
       align-items: center;
       position: fixed;
       top: 20px;
@@ -91,7 +92,6 @@ header {
       list-style: none;
       text-align: left;
       background-color: var.$text-color;
-      box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
       transition-duration: .25s;
       z-index: 100;
   

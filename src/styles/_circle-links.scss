@@ -1,0 +1,179 @@
+@use 'variables' as var;
+
+.circle-link {
+  width: 126px;
+  height: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: .5px solid var.$text-color;
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+
+  @include tablet {
+    width: 150px;
+    height: 150px;
+   }
+ 
+   @include desktop {
+     width: 222px;
+     height: 222px;
+   }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    border-radius: 50%;
+    border: .5px solid var.$text-color;
+
+    @include tablet {
+      width: 94px;
+      height: 94px;
+    }
+
+    @include desktop   {
+      width: 139px;
+      height: 139px;
+     }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background: url(./../images/vector.svg) no-repeat;
+    background-size: contain;
+    transform: rotate(0);
+
+    @include tablet {
+      width: 28px;
+      height: 28px;
+    }
+
+    @include desktop {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &:hover {
+    &:after {
+      background: url(./../images/vector-blue.svg) no-repeat;
+      background-size: contain;
+      transform: rotate(29deg);
+      transition: 0.5s;
+    }
+  }
+
+  img {
+    width: 114px;
+    height: 114px;
+    animation: 15s linear 0s normal none infinite running rot;
+  -webkit-animation: 15s linear 0s normal none infinite running rot;
+
+  @keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+    @include tablet {
+      width: 136px;
+      height: 136px;
+    }
+
+    @include desktop {
+      width: 200px;
+      height: 200px;
+     }
+  }
+
+  &.xl {
+    width: 139px;
+    height: 139px;
+
+    @include tablet {
+      width: 172px;
+      height: 172px;
+    }
+
+    @include desktop {
+      width: 272px;
+      height: 272px;
+     }
+
+    &:before {
+      width: 88px;
+      height: 88px;
+  
+      @include tablet {
+        width: 108px;
+        height: 108px;
+      }
+  
+      @include desktop   {
+        width: 171px;
+        height: 171px;
+       }
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      animation: none;
+  -webkit-animation: none;
+  
+      @include tablet {
+        width: 149px;
+        height: 149px;
+      }
+  
+      @include desktop {
+        width: 236px;
+        height: 236px;
+       }
+    }
+
+    &:after {
+      @include desktop {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  &.icf {
+    &:after {
+      width: 35px;
+      height: 25px;
+      background: url(./../images/ICF.svg) no-repeat;
+      background-size: contain;
+      transform: rotate(0);
+  
+      @include tablet {
+        width: 40px;
+        height: 25px;
+      }
+  
+      @include desktop {
+        width: 55px;
+        height: 35px;
+      }
+    }
+  }
+}
