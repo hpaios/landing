@@ -1,0 +1,85 @@
+@use 'variables' as var;
+
+.research {
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h5 {
+    font: 400 22px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    color: var.$text-color;
+    text-align: center;
+    width: 100%;
+    margin: 50px auto 40px;
+    padding: 0 30px;
+    letter-spacing: 1px;
+
+    b {
+      font-weight: 700;
+    }
+
+    a {
+      color: var.$text-color;
+    }
+
+    @include tablet {
+      font: 400 29px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 400 40px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+    }
+  }
+
+  .wrapper-container {
+    background: url(./../images/bg-block.svg) no-repeat 0 0;
+    background-size: cover;
+
+    @include tablet {
+      background: url(./../images/bg-block-md.svg) no-repeat 0 0;
+      background-size: cover;
+    }
+
+    @include desktop {
+      background: url(./../images/bg-block-xl.svg) no-repeat 0 0;
+      background-size: cover;
+    }
+  }
+
+  .text {
+    font: 400 18px/1.2 'Futura PT', sans-serif;
+    text-align: center;
+    padding: 40px 25px 60px;
+    height: 405px;
+    position: relative;
+    z-index: 100000000;
+
+    @include tablet {
+      font: 400 24px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 400 26px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      padding: 40px 200px 60px;
+    }
+
+    hr {
+      margin: 0 0 40px 0;
+      display: block;
+    }
+
+    .blue, a {
+      color: var.$blue;
+    }
+    .blue {
+      display: block;
+      margin: 0 0 10px 0;
+    }
+  }
+}

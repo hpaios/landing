@@ -1,0 +1,88 @@
+@use 'variables' as var;
+
+.helps {
+  .items {
+    margin: 40px auto 0;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      font: 400 18px/1.2 'Futura PT', sans-serif;
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var.$dark-gray;
+      position: relative;
+      margin: 20px auto 0;
+
+      @include tablet {
+        font: 400 23px/1.2 'Futura PT', sans-serif;
+        flex-basis: 48%;
+      }
+
+      @include desktop {
+        flex-basis: 30%;
+      }  
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        top: -9px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, #2E3192 0%, #2484C6 100%);
+      }
+
+      &.item-1 {
+        &:before {
+          animation: pos 10s infinite ease-in-out;
+          -webkit-animation: pos 10s infinite ease-in-out;
+  
+          @keyframes pos{
+            0%{
+              left: 0;
+            }
+            50%{
+              left: 100%;
+            }
+            100%{
+              left: 0;
+            }
+          }
+        }
+      }
+
+      &.item-2 {
+        &:before {
+          animation: pos 8s infinite ease-in-out;
+          -webkit-animation: pos 8s infinite ease-in-out;
+        }
+      }
+
+      &.item-3 {
+        &:before {
+          animation: pos 9s infinite ease-in-out;
+          -webkit-animation: pos 9s infinite ease-in-out;
+        }
+      }
+
+      span {
+        color: var.$blue;
+        font: 400 24px/1.2 'Futura PT', sans-serif;
+        margin: 0 auto 15px;
+        display: inline-block;
+
+        @include tablet {
+          font: 400 32px/1.2 'Futura PT', sans-serif;
+        }
+      }
+    }
+  }
+}
