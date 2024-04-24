@@ -8,9 +8,13 @@ body {
   box-sizing: border-box;
 }
 
-section {
-  height: 100vh;
+ body :has(#menu-toggle:checked)  {
+  overflow: hidden;
 }
+
+// section {
+//   height: 100vh;
+// }
 
 .wrapper {
   display: flex;
