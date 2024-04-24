@@ -55,3 +55,21 @@ h2 {
     margin: 60px auto 50px;
   }
 }
+
+h4 {
+  font: 450 18px/1.2 'Futura PT', sans-serif;
+  text-transform: uppercase;
+  color: var.$text-color;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+
+  @include tablet {
+    font: 450 24px/1.2 'Futura PT', sans-serif;
+    text-align: center;
+  }
+
+  @include desktop {
+    text-align: left;
+  }
+}
