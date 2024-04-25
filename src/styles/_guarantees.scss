@@ -1,0 +1,119 @@
+@use 'variables' as var; 
+
+.guarantees {
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  h2 {
+    @include tablet {
+     text-align: center;
+    }
+
+    @include desktop {
+      text-align: right;
+      margin: 60px auto 0;
+    }
+  }
+
+  h4, a {
+    font: 450 18px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    color: var.$dark-gray;
+    width: 100%;
+  
+    @include tablet {
+      font: 400 18px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 400 24px/1.2 'Futura PT', sans-serif;
+      text-align: right;
+      margin: 0 auto 40px;
+    }
+  }
+
+  h3 {
+    font: 500 24px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px 0 auto;
+    color: var.$text-color;
+    width: 100%;
+  
+    @include tablet {
+      font: 500 30px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      width: 50%;
+    }
+  
+    @include desktop {
+      font: 600 39px/1.2 'Futura PT', sans-serif;
+      width: 100%;
+    }
+  }
+
+  p {
+    font: 450 18px/1.2 'Futura PT', sans-serif;
+    text-align: center;
+    margin: 10px 0 auto;
+    color: var.$text-color;
+    width: 100%;
+
+    @include tablet {
+      font: 400 20px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      width: 60%;
+      margin: 40px 0 0 30%;
+    }
+  
+    @include desktop {
+      font: 400 22px/1.2 'Futura PT', sans-serif;
+      margin: 40px 0 0 35%;
+    }
+  }
+
+  .items {
+    @include desktop {
+      display: flex;
+    }
+    .item {
+      position: relative;
+      padding: 85px 0 10px;
+      z-index: 1;
+      margin: 30px auto 0;
+
+      @include tablet {
+        padding: 45px 0 30px 50px;
+      }
+
+      @include desktop {
+        flex-basis: 50%;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url(./../images/quarantees-bg.svg) no-repeat;
+        background-size: cover;
+        width: 100px;
+        height: 112px;
+        left: calc(50% - 50px);
+        top: 8px;
+        z-index: -1;
+
+        @include tablet {
+          width: 210px;
+          height: 233px;
+          left: 0;
+          top: 0;
+        }
+      }
+
+    }
+  }
+}
