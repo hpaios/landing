@@ -1,0 +1,106 @@
+@use 'variables' as var; 
+
+.protection {
+
+  h2 {
+    @include tablet {
+     text-align: center;
+    }
+
+    @include desktop {
+      text-align: left;
+     }
+  }
+
+  a {
+    color: var.$blue;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h5 {
+    display: block;
+    margin: 15px auto;
+    font: 500 24px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(left, rgb(46, 49, 146), rgb(36, 132, 198));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include tablet {
+      font: 500 30px/1.2 'Futura PT', sans-serif;  
+    }
+
+    @include desktop {
+      font: 600 39px/1.2 'Futura PT', sans-serif;  
+      margin: 0 auto 8px;
+    }
+  }
+
+  .items {
+    .item {
+      padding: 30px 25px 50px;
+      border: 1px solid var.$gray;
+      background: rgba(var.$text-color, 0.05);
+      border-radius: 4px;
+      position: relative;
+      box-shadow: inset 0px 4px 50px rgba(31,31,31,1);
+      margin: 0 auto 20px;
+
+      @include tablet {
+        margin: 0 auto 40px;
+      }
+
+      @include desktop {
+        padding: 60px 130px 60px 85px;
+      }
+
+      p {
+        color: var.$text-color;
+        text-align: left;
+        font: 400 18px/1.2 'Futura PT', sans-serif;
+        width: 75%;
+
+        @include tablet {
+          font: 400 20px/1.2 'Futura PT', sans-serif;  
+        }
+
+        @include desktop {
+          width: 90%;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url(./../images/prot-bg-1.svg) no-repeat;
+        background-size: cover;
+        width: 69px;
+        height: 122px;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        @include tablet {
+          width: 125px;
+          height: 218px;
+        }
+      }
+
+      &.item-2 {
+        &:before {
+          width: 133px;
+          height: 200px;
+          background: url(./../images/prot-bg-2.svg) no-repeat;
+
+          @include tablet {
+            background: url(./../images/prot-bg-3.svg) no-repeat;
+          }
+        } 
+      }
+    }
+  }
+}
