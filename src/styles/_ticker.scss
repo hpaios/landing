@@ -72,3 +72,85 @@
     }
   }
 }
+
+.vertical {
+  display: block;
+  margin: 15px auto;
+  background: var.$bg-color;
+  padding: 20px 0;
+  border-top: none;
+  border-bottom: none;
+  width: 15%;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 7%);
+  z-index: -1;
+
+  @include tablet {
+    font: 450 24px/1.2 'Futura PT', sans-serif;
+    padding: 30px 0;
+  }
+
+  @include desktop {
+    font: 450 43px/1.2 'Futura PT', sans-serif;
+  }
+
+  > div {
+    font: 450 90px/1.2 'Futura PT', sans-serif;
+    writing-mode: vertical-rl;
+    background: -webkit-linear-gradient(left, rgba(46, 49, 146, 1), rgba(36, 132, 198, 1));
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 3px transparent;
+    color: var.$bg-color;
+    display: flex;
+    width: 200%;
+    letter-spacing: 2px;
+    -webkit-animation: ticker-vertical 20s linear infinite;
+    -moz-animation: ticker-vertical 20s linear infinite;
+    animation: ticker-vertical 20s linear infinite;
+
+    @include tablet {
+      width: 100%;
+      height: 200%;
+    }
+
+    div {
+      white-space: nowrap;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @keyframes ticker-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%)
+    }
+ }
+ 
+  @-webkit-keyframes ticker-vertical {
+    from {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+ 
+  @-moz-keyframes ticker-vertical {
+    from {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+}

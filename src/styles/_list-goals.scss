@@ -1,0 +1,106 @@
+@use 'variables' as var; 
+
+.list-goals {
+
+  h4 {
+    font: 700 24px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 30px;
+    color: var.$text-color;
+    width: 100%;
+  
+    @include tablet {
+      font: 700 40px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 700 58px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      margin: 0 auto 25px;
+    }
+  }
+
+  h5 {
+    font: 450 18px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    color: var.$dark-gray;
+    width: 100%;
+    padding: 0 0 50px 0;
+    border-bottom: 1px solid var.$dark-gray;
+  
+    @include tablet {
+      font: 450 24px/1.2 'Futura PT', sans-serif;
+      padding: 0 0 40px 0;
+    }
+  
+    @include desktop {
+      font: 450 28px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      padding: 0 0 60px 0;
+      margin: 0 auto 40px;
+    }
+  }
+
+  .items {
+    position: relative;
+    overflow: hidden;
+    margin: 30px auto 0;
+    z-index: 100;
+    
+    .item:nth-child(even) {
+      @include desktop {
+        margin: 50px auto 0;
+      }
+    }
+    
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 100px;
+    }
+
+    .item {
+      padding: 40px 25px 50px;
+      border: 1px solid var.$gray;
+      background: rgba(var.$text-color, 0.05);
+      border-radius: 4px;
+      box-shadow: inset 0px 4px 50px rgba(31,31,31,1);
+      margin: 0 auto 20px;
+
+      @include tablet {
+        padding: 70px;
+        margin: 0 auto 40px;
+      }
+
+      @include desktop {
+        flex: 40%;
+      }
+
+      span {
+        margin: 15px auto;
+        font: 500 24px/1.2 'Futura PT', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+
+        @include tablet {
+          text-align: left;
+        }
+      }
+
+      p {
+        margin: 15px auto;
+        font: 400 18px/1.2 'Futura PT', sans-serif;
+        text-align: center;
+        width: 100%;
+
+        @include tablet {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
