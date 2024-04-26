@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://hpaios.github.io/landing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpaios/landing.git"
+  },
   "scripts": {
     "serve": "webpack serve --open --mode development",
     "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +43,7 @@
     "svgo": "^3.2.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "^5.0.4",
+    "gh-pages": "^1.1.0"
   }
 }
