@@ -12,9 +12,11 @@ body {
   overflow: hidden;
 }
 
-// section {
-//   height: 100vh;
-// }
+section {
+  &.hero {
+    height: 100vh
+  }
+}
 
 .wrapper {
   display: flex;
@@ -33,7 +35,7 @@ body {
   }
 
   @include desktop {
-    padding: 40px 20px;
+    padding: 40px 0;
     max-width: var.$desktop-width;
   }
 }
