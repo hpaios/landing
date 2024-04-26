@@ -1,0 +1,111 @@
+@use 'variables' as var;
+
+.cooperation {
+  .items {
+    .item {
+      background: rgba(var.$text-color, 0.05);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 30px;
+      text-align: center;
+      font: 400 26px/1.2 'Futura PT', sans-serif;
+      margin: 75px 0 0 0;
+      border: 1px solid var.$gray;
+      box-shadow: inset 0px 4px 60px rgba(31,31,31,2);
+      position: relative;
+      z-index: 0;
+
+      @include tablet {
+        padding: 40px 20px 40px 84px;
+        margin: 40px 0 0 20px;
+      }
+
+      // @include desktop {
+      //   padding: 123px 53px 78px;
+      // }
+
+      span {
+        font: 500 18px/1.2 'Futura PT', sans-serif;
+        margin: 0 0 25px 0;
+        text-transform: uppercase;
+
+        @include tablet {
+          font: 600 24px/1.2 'Futura PT', sans-serif;
+          text-align: left;
+        }
+    
+          // @include desktop {
+            
+          // }
+      }
+
+      .circle {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        border: 1px solid var.$text-color;
+        background: var.$bg-gray;
+        position: absolute;
+        top: -38px;
+        left: calc(50% - 38px);
+        z-index: 1;
+
+        @include tablet {
+          width: 100px;
+          height: 100px;
+          left: -50px;
+          top: 20px;
+        }
+
+        span {
+          &.number {
+            display: block;
+            margin: 15px auto;
+            font: 700 35px/1.2 'Futura PT', sans-serif;
+            text-transform: uppercase;
+            color: var.$bg-gray;
+            background: -webkit-linear-gradient(left, rgba(46, 49, 146, 1), rgba(36, 132, 198, 1));
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 2px transparent;
+            text-align: center;
+
+            @include tablet {
+              font: 700 48px/1.2 'Futura PT', sans-serif;
+              margin: 18px auto;
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          font: 400 18px/1.2 'Futura PT', sans-serif;
+          text-align: left;
+          position: relative;
+          padding: 0 0 0 20px;
+          width: 100%;
+
+          @include tablet {
+            font: 400 22px/1.2 'Futura PT', sans-serif;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var.$text-color;
+            left: 0;
+            top: 7px;
+
+            @include tablet {
+              top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
