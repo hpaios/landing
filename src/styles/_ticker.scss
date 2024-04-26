@@ -74,7 +74,7 @@
 }
 
 .vertical {
-  display: block;
+  display: none;
   margin: 15px auto;
   background: var.$bg-color;
   padding: 20px 0;
@@ -91,10 +91,12 @@
   @include tablet {
     font: 450 24px/1.2 'Futura PT', sans-serif;
     padding: 30px 0;
+    display: block;
   }
 
   @include desktop {
     font: 450 43px/1.2 'Futura PT', sans-serif;
+    width: 12%;
   }
 
   > div {
@@ -107,9 +109,9 @@
     display: flex;
     width: 200%;
     letter-spacing: 2px;
-    -webkit-animation: ticker-vertical 20s linear infinite;
-    -moz-animation: ticker-vertical 20s linear infinite;
-    animation: ticker-vertical 20s linear infinite;
+    -webkit-animation: ticker-vertical 25s linear infinite;
+    -moz-animation: ticker-vertical 25s linear infinite;
+    animation: ticker-vertical 25s linear infinite;
 
     @include tablet {
       width: 100%;
