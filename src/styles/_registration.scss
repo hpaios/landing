@@ -118,7 +118,7 @@
     }
 
     @include desktop {
-      width: 17%;
+      width: 18%;
 
       &:after {
         top: 20px;
@@ -145,4 +145,56 @@
       left: calc(50% - 63px);
     }
   }
-}
+
+  &.second-part {
+    .content {
+      margin: 31px 0;
+      padding: 20px 20px 150px;
+
+      @include desktop {
+        padding: 70px;
+        margin: 85px 0 70px;
+      }
+    }
+    .circle-links {
+      position: absolute;
+      bottom: 15px;
+      left: calc(50% - 63px);
+  
+      @include tablet {
+        left: 38%;
+        bottom: 90px;
+      }
+  
+      @include desktop {
+        left: calc(50% - 63px);
+        bottom: 50px;
+      }
+    }
+    .hero-photo {
+      width: 294px;
+
+      @include tablet {
+        width: 470px;
+        right: -90px;
+      }
+      @include desktop {
+        top: -130px;
+      }
+    }
+  }
+
+  .ticker {
+    > div {
+      div {
+        span {
+          display: inline-block;
+          padding: 0 20px;
+          background: -webkit-linear-gradient(left, rgb(46, 49, 146), rgb(36, 132, 198));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+ }
