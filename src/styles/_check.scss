@@ -1,0 +1,31 @@
+@use 'variables' as var;
+
+.check {
+  h3 {
+    font: 400 24px/1.2 'Futura PT', sans-serif;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include tablet {
+      font: 400 30px/1.2 'Futura PT', sans-serif;
+      padding: 0 70px;
+    }
+
+    @include desktop {
+      font: 400 39px/1.2 'Futura PT', sans-serif;
+      padding: 0;
+      text-align: left;
+      width: 75%;
+      float: left;
+    }
+  }
+
+  .circle-links {
+    margin: 40px 0 0 calc(50% - 63px);
+
+    @include desktop{
+      margin: -20px 0 0 0;
+    }
+  }
+}
