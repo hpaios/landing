@@ -1,0 +1,138 @@
+@use 'variables' as var; 
+
+.variants {
+  .items {
+    @include desktop {
+      display: flex;
+    }
+
+    .item {
+    padding: 20px 10px 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: 2px solid #1F1F1F;
+    border-bottom: 2px solid #1F1F1F;
+    margin: 0 auto 50px;
+
+    &:hover {
+      @include desktop {
+        cursor: pointer;
+        box-shadow: 0px 10px 30px 0px #5252524D;
+        transition: 1s;
+      }
+    }
+
+    @include tablet {
+      padding: 30px 20px;
+      border-left: 2px solid #1F1F1F;
+      border-right: 2px solid #1F1F1F;
+      border-top: none;
+      border-bottom: none;
+      max-width: 393px;
+    }
+
+      span {
+        &.title {
+        font: 600 24px/1.2 'Futura PT', sans-serif;
+        text-transform: uppercase;
+        margin: 0 auto 25px;
+
+          @include desktop {
+            height: 102px;
+          }
+        }
+      }
+
+      .duration {
+        font: 400 22px/1.2 'Futura PT', sans-serif;
+        color: var.$text-gray;
+        margin: 5px auto 0;
+
+        @include desktop {
+          margin: 20px auto 0;
+        }
+      }
+
+      ul {
+        li {
+          font: 400 18px/1.2 'Futura PT', sans-serif;
+          text-align: left;
+          position: relative;
+          padding: 0 0 0 20px;
+          width: 100%;
+
+          @include tablet {
+            font: 400 22px/1.2 'Futura PT', sans-serif;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var.$text-color;
+            left: 0;
+            top: 7px;
+
+            @include tablet {
+              top: 10px;
+            }
+          }
+        }
+
+        @include desktop {
+          height: 250px;
+        }
+      }
+
+      .price, .price span {
+        margin: 15px auto;
+        font: 700 30px/1.2 'Futura PT', sans-serif;
+        text-transform: uppercase;
+        background: -webkit-linear-gradient(left, rgb(46, 49, 146), rgb(36, 132, 198));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include tablet {
+          font: 700 35px/1.2 'Futura PT', sans-serif;
+          margin: 60px auto 0;
+        }
+
+        span {
+          position: relative;
+
+          &::after {
+            content: '';
+            display: block;
+            height: 63px;
+            width: 1px;
+            position: absolute;
+            background: var.$text-color;
+            top: -13px;
+            left: 30px;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      a {
+        font: 450 18px/1.2 'Futura PT', sans-serif;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var.$text-color;
+        display: block;
+        padding: 7px;
+        border: 1px solid var.$text-color;
+        border-radius: 23px;
+        margin: 30px 0 0;
+
+        @include tablet {
+          width: 256px;
+          margin: 60px auto 0;
+        }
+      }
+    }
+  }
+}
