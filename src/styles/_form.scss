@@ -1,0 +1,92 @@
+@use 'variables' as var; 
+
+.form {
+
+  h3 {
+    font: 700 24px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px auto;
+  
+    @include tablet {
+      font: 700 38px/1.2 'Futura PT', sans-serif;
+    }
+  
+    @include desktop {
+      font: 700 58px/1.2 'Futura PT', sans-serif;
+      text-align: center;
+      margin: 20px auto 60px;
+      padding: 0 10%;
+    }
+  }
+
+  form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 10px;
+    border: 1px solid var.$gray;
+    background: rgba(var.$text-color, 0.05);
+    border-radius: 4px;
+    box-shadow: inset 0px 4px 60px rgba(31,31,31,2);
+    flex-direction: column;
+
+    @include tablet {
+      padding: 70px 100px;
+    }
+  
+    @include desktop {
+      padding: 70px 100px;
+    }
+    
+    input {
+      display: block;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid var.$dark-gray;
+      padding: 13px 0;
+      color: var.$text-color;
+      font: 450 18px/1.2 'Futura PT', sans-serif;
+    }
+
+    button {
+      display: inline-block;
+      font: 600 20px/1.2 'Futura PT', sans-serif;
+      color: var.$text-color;
+      width: 100%;
+      padding: 20px;
+      background: -webkit-linear-gradient(left, rgba(46, 49, 146, 1), rgba(36, 132, 198, 1));
+      border-radius: 25px;
+      margin: 40px 0 20px;
+    }
+
+    .confid {
+      color: #444;
+      padding: 0 20px;
+
+      a {
+        color: #444;
+      }
+    }
+  }
+
+  .telegram {
+    font: 450 18px/1.2 'Futura PT', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: var.$dark-gray;
+    margin: 42px auto;
+
+    @include tablet {
+      font: 450 24px/1.2 'Futura PT', sans-serif;
+    }
+
+    a {
+      display: block;
+      background: url('./../images/telegram.svg') no-repeat;
+      width: 71px;
+      height: 71px;
+      margin: 25px auto;
+    }
+  }
+ }

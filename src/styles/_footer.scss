@@ -1,0 +1,55 @@
+@use 'variables' as var; 
+
+footer {
+  box-shadow: 0px 4px 60px 0px #1F1F1F inset;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 15px 0;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 112px;
+      height: 82px;
+      margin: 0 auto 40px;
+
+      @include tablet {
+        margin: 0;
+      }
+    }
+
+    .menu-box {
+      ul {
+        a {
+          font: 450 21px/1.2 'Futura PT', sans-serif;
+          color: var.$text-color;
+          text-transform: uppercase;
+          text-align: center;
+          text-decoration: none;
+          display: block;
+          width: 100%;
+          margin: 0 auto 25px;
+
+          @include tablet {
+            margin: 0 20px 25px;
+          }
+
+          @include desktop {
+            margin: 0 20px;
+          }
+        }
+  
+        @include tablet {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
