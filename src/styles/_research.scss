@@ -57,7 +57,7 @@
     padding: 40px 25px 60px;
     height: 405px;
     position: relative;
-    z-index: 100000000;
+    z-index: 10;
 
     @include tablet {
       font: 400 24px/1.2 'Futura PT', sans-serif;

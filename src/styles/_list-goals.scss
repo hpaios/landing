@@ -48,7 +48,7 @@
     position: relative;
     overflow: hidden;
     margin: 30px auto 0;
-    z-index: 100;
+    z-index: 10;
     
     .item:nth-child(even) {
       @include desktop {
