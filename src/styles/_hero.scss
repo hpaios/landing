@@ -4,7 +4,6 @@
 .hero {
 
   .container {
-    height: calc(100vh - 60px);
     position: relative;
   }
 
@@ -32,7 +31,7 @@
     font: 700 35px/1.2 'Futura PT', sans-serif;
     text-transform: uppercase;
     text-align: center;
-    margin: 20px 0 auto;
+    margin: 0 auto;
     width: 100%;
   
     @include tablet {
@@ -89,38 +88,37 @@
       background: url(./../images/blue-bg-mob.svg) no-repeat 40% 0;
       background-size: auto;
 
+      img {
+        display: block;
+        height: auto;
+      }
+
       @include tablet {
-        // float: right;
         max-width: 522px;
         padding: 0;
         position: absolute;
-        // top: -278px
         top: auto;
-        bottom: 30px;
+        bottom: 0;
         right: -10%;
         background: none;
+
+        img {
+          width: 522px;
+        }
       }
     
       @include desktop {
-        // float: right;
         height: auto;
-        max-width: 600px;
+        max-width: 740px;
         top: auto;
-        bottom: 50px;
+        bottom: -25px;
         right: 0;
-        // position: relative;
-        // top: -430px;
-        // right: 90px;
         background: none;
-      }
-  
-      img {
-        object-fit: fill;
-        width: auto;
-        height: auto;
-        // display: block;
-        // width: 740px;
-        // height: auto;
+        position: absolute;
+
+        img {
+          width: 740px;
+        }
       }
     }
   }
@@ -129,7 +127,7 @@
     font: 450 18px/1.2 'Futura PT', sans-serif;
     text-transform: uppercase;
     text-align: center;
-    margin: 40px auto 0;
+    margin: 40px auto 20px;
     color: var.$text-color;
     text-decoration: none;
     width: 100%;
@@ -139,7 +137,7 @@
       position: absolute;
       margin: 0;
       left: 20px;
-      bottom: 120px;
+      bottom: 50px;
       width: 200px;
       height: 45px;
 
@@ -158,6 +156,7 @@
     @include desktop {
       font: 450 28px/1.2 'Futura PT', sans-serif;
       left: 0;
+      bottom: 150px;
 
       &:after {
         top: 15px;
@@ -168,43 +167,31 @@
   }
   
   .tagline {
-    display: none !important;
-  
-    @include tablet {
-      display: none !important;
-    }
+    position: absolute;
+    visibility: hidden;
   
     @include desktop {
       font: 400 16px/1.2 'Futura PT', sans-serif;
       text-transform: uppercase;
       writing-mode: vertical-rl;
-      position: absolute;
       right: 5%;
       top: 20%;
-
-      &.ru-lang {
-        display: block !important;
-      }
-
-      // &.ua-lang {
-      //   display: block !important;
-      // }
+      visibility: visible;
     }
   }
 
   .circle-links {
     position: relative;
     left: calc(50% - 60px);
-    bottom: -5px;
+    bottom: 0;
 
     @include tablet {
-      left: 33%;
-      bottom: -80px;
+      left: 36%;
     }
 
     @include desktop {
       left: 33%;
-      bottom: 150px;
+      bottom: 60px;
     }
   }
 }

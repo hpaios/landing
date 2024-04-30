@@ -5,10 +5,9 @@ header {
   justify-content: space-between;
 
   nav {
-    width: 100%;
-
     @include desktop {
-      margin: 40px 0 0 60px;
+      width: 100%;
+      margin: 20px 0 0 60px;
     }
 
     #menu-toggle {

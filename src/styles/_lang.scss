@@ -23,6 +23,7 @@
       color: var.$text-color;
     }
   }
+  
   span {
     display: inline-block;
     font: 400 16px/16px 'Futura PT', sans-serif;
@@ -37,6 +38,30 @@
 
     @include desktop {
       color: var.$text-color;
+    }
+  }
+
+  &.md {
+    z-index: 1;
+    flex-direction: column;
+    width: 25px;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    z-index: 10;
+
+    span.lang {
+      margin: 0 0 10px 0;
+    }
+
+    a, span {
+      color: var.$text-color;
+      font: 400 20px/1.2 'Futura PT', sans-serif;
+      padding: 0;
+    }
+
+    @include desktop {
+      display: none;
     }
   }
 }

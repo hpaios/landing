@@ -12,9 +12,20 @@ body {
   overflow: hidden;
 }
 
-section {
-  &.hero {
-    height: 100vh
+.telegram-link a{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+  width: 71px;
+  height: 71px;
+  background: url(./../images/telegram.svg) no-repeat;
+  z-index: 999999;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 1s;
   }
 }
 
