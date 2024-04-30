@@ -3,10 +3,6 @@
 var __webpack_exports__ = {};
 
 
-window.addEventListener('load', function () {
-  var lang = localStorage.getItem('lang');
-  lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
-});
 var nav = document.getElementById('menu-toggle');
 nav.addEventListener('click', function () {
   nav.classList.toggle('open');
@@ -37,13 +33,20 @@ var changeLanguageRU = function changeLanguageRU() {
     uaLang[_i2].style.display = 'none';
   }
 };
+var setLang = function setLang() {
+  var lang = localStorage.getItem('lang');
+  lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
+};
+var toggleLang = function toggleLang() {
+  var lang = localStorage.getItem('lang');
+  lang === 'ua' ? changeLanguageRU() : changeLanguageUA();
+};
+window.addEventListener('load', setLang);
 var uaLang = document.getElementById('ua-lang');
-var uaLangs = document.getElementById('ua-langs');
 uaLang.addEventListener('click', changeLanguageUA);
-uaLangs.addEventListener('click', changeLanguageUA);
 var ruLang = document.getElementById('ru-lang');
-var ruLangs = document.getElementById('ru-langs');
 ruLang.addEventListener('click', changeLanguageRU);
-ruLangs.addEventListener('click', changeLanguageRU);
+var switchLang = document.getElementById('switch-lang');
+switchLang.addEventListener('click', toggleLang);
 /******/ })()
 ;
