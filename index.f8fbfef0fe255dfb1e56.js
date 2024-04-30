@@ -7,22 +7,34 @@ window.addEventListener('load', function () {
   var lang = localStorage.getItem('lang');
   lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
 });
+var nav = document.getElementById('menu-toggle');
+nav.addEventListener('click', function () {
+  nav.classList.toggle('open');
+});
+var navLinks = document.getElementById('list-links').getElementsByTagName('a');
+for (var i = 0; i < navLinks.length; ++i) {
+  navLinks[i].addEventListener('click', function () {
+    nav.classList.remove('open');
+  });
+}
 var changeLanguageUA = function changeLanguageUA() {
   var ruLang = document.getElementsByClassName("ru-lang");
   var uaLang = document.getElementsByClassName("ua-lang");
   localStorage.setItem('lang', 'ua');
-  for (var i = 0; i < uaLang.length; i++) {
-    uaLang[i].style.display = 'inline-block';
-    ruLang[i].style.display = 'none';
+  nav.classList.remove('open');
+  for (var _i = 0; _i < uaLang.length; _i++) {
+    uaLang[_i].style.display = 'inline-block';
+    ruLang[_i].style.display = 'none';
   }
 };
 var changeLanguageRU = function changeLanguageRU() {
   var ruLang = document.getElementsByClassName("ru-lang");
   var uaLang = document.getElementsByClassName("ua-lang");
   localStorage.setItem('lang', 'ru');
-  for (var i = 0; i < uaLang.length; i++) {
-    ruLang[i].style.display = 'inline-block';
-    uaLang[i].style.display = 'none';
+  nav.classList.remove('open');
+  for (var _i2 = 0; _i2 < uaLang.length; _i2++) {
+    ruLang[_i2].style.display = 'inline-block';
+    uaLang[_i2].style.display = 'none';
   }
 };
 var uaLang = document.getElementById('ua-lang');
