@@ -736,12 +736,12 @@
         <div class="container">
           <h3 class='ru-lang'>Для быстрой связи заполните форму регистрации</h3>
           <h3 class='ua-lang'>Для швидкого зв'язку заповніть форму реєстрації</h3>
-          <form action="#">
-            <input type="text" placeholder='Имя' class='ru-lang' />
-            <input type="text" placeholder="Iм'я" class='ua-lang' />
-            <input type="tel" placeholder='Телефон (с мессенджерами)' class='ru-lang'>
-            <input type="tel" placeholder='Телефон (з месенджерами)' class='ua-lang'>
-            <input type="email" placeholder='Email'>
+          <form method="POST" action='#' name='submit-to-google-sheet'>
+            <input type="text" placeholder='Имя' class='ru-lang' name='name' required />
+            <!-- <input type="text" placeholder="Iм'я" class='ua-lang' name='name' required /> -->
+            <input type="tel" placeholder='Телефон (с мессенджерами)' class='ru-lang' name='phone' required />
+            <!-- <input type="tel" placeholder='Телефон (з месенджерами)' class='ua-lang' name='phone' required /> -->
+            <input type="email" placeholder='Email' name='email' required />
             <button type='submit'>
               <span class='ru-lang'>Отправить</span>
               <span class='ua-lang'>Надіслати</span>
@@ -807,5 +807,18 @@
         </div>    
       </div>  
     </section> -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxtVxu8Iv8tevJOdLMizPw_7KadAQGp7oVW2D_8Ce-q_atMI46Mer4TnWgrBmeKCHzb/exec'
+
+      const form = document.forms['submit-to-google-sheet']
+  
+      form.addEventListener('submit', e => {
+        console.log('aaa')
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+         .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
