@@ -23,7 +23,7 @@
       color: var.$text-color;
     }
   }
-  
+
   span {
     display: inline-block;
     font: 400 16px/16px 'Futura PT', sans-serif;
@@ -32,7 +32,8 @@
       display: inline-block;
       width: 22px;
       height: 22px;
-      background: url('./../images/lang.svg');
+      background: url('./../images/lang.svg') no-repeat;
+      background-size: cover;
       margin: 0 10px 0 0;
     }
 
@@ -42,22 +43,16 @@
   }
 
   &.md {
-    z-index: 1;
-    flex-direction: column;
-    width: 25px;
+    width: 33px;
     position: absolute;
-    right: 20px;
-    top: 80px;
+    right: 80px;
+    top: 21px;
     z-index: 10;
 
     span.lang {
-      margin: 0 0 10px 0;
-    }
-
-    a, span {
-      color: var.$text-color;
-      font: 400 20px/1.2 'Futura PT', sans-serif;
-      padding: 0;
+      margin: 0;
+      width: 33px;
+      height: 33px;
     }
 
     @include desktop {

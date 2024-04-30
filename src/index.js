@@ -1,11 +1,6 @@
 import './styles/styles.scss';
 import './fonts/fonts.scss';
 
-window.addEventListener('load', () => {
-  const lang = localStorage.getItem('lang');
-  lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
-})
-
 const nav = document.getElementById('menu-toggle');
 nav.addEventListener('click', () => {
   nav.classList.toggle('open');
@@ -40,12 +35,23 @@ const changeLanguageRU = () => {
   }
 };
 
+const setLang = () => {
+  const lang = localStorage.getItem('lang');
+  lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
+}
+
+const toggleLang = () => {
+  const lang = localStorage.getItem('lang');
+  lang === 'ua' ? changeLanguageRU() : changeLanguageUA();
+}
+
+window.addEventListener('load',  setLang);
+
 const uaLang = document.getElementById('ua-lang');
-const uaLangs = document.getElementById('ua-langs');
 uaLang.addEventListener('click',changeLanguageUA)
-uaLangs.addEventListener('click',changeLanguageUA)
 
 const ruLang = document.getElementById('ru-lang');
-const ruLangs = document.getElementById('ru-langs');
 ruLang.addEventListener('click', changeLanguageRU);
-ruLangs.addEventListener('click', changeLanguageRU);
+
+const switchLang = document.getElementById('switch-lang');
+switchLang.addEventListener('click',  toggleLang);
