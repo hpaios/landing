@@ -11,9 +11,6 @@ header {
     }
 
     #menu-toggle {
-      opacity: 0;
-      display: none;
-
       @include desktop {
         display: none;
       }
@@ -126,33 +123,29 @@ header {
       }
     }
     
-    #menu-toggle:checked ~ .menu-btn > span {
+    .open.menu-btn > span {
       transform: rotate(45deg);
       background-color: var.$dark-blue;
     }
-    #menu-toggle:checked ~ .menu-btn > span::before {
+    .open.menu-btn > span::before {
       top: 0;
       transform: rotate(0);
       background-color: var.$dark-blue;
     }
-    #menu-toggle:checked ~ .menu-btn > span::after {
+    .open.menu-btn > span::after {
       top: 0;
       transform: rotate(90deg);
       background-color: var.$dark-blue;
     }
-    #menu-toggle:checked ~ .menu-box {
+    #menu-toggle.open ~ .menu-box {
       visibility: visible;
       right: 0;
     }
   
-    #menu-toggle:checked ~ .overlay {
+    #menu-toggle.open ~ .overlay {
       display: block;
       background-color: rgba(0, 0, 0, 0.5);
     }
-
-    //  body:has(#menu-toggle:checked)  {
-    //   overflow: hidden;
-    // }
   
     .overlay {
       display: none;
