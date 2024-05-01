@@ -33,40 +33,50 @@
     @include desktop {
       font: 400 40px/1.2 'Futura PT', sans-serif;
       text-align: left;
+      width: 85%;
+    }
+  }
+
+  .container {
+    @include desktop {
+      background-image: url(./../images/bg-metrix.svg);
+      background-position: 20px 0;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 
   .wrapper-container {
-    background: url(./../images/bg-block.svg) no-repeat 0 0;
+    background: url(./../images/bg-block.svg);
     background-size: cover;
+    background-repeat: no-repeat;
 
     @include tablet {
-      background: url(./../images/bg-block-md.svg) no-repeat 0 0;
-      background-size: cover;
+      background: url(./../images/bg-metrix-md.svg);
     }
 
     @include desktop {
-      background: url(./../images/bg-block-xl.svg) no-repeat 0 0;
-      background-size: cover;
+      background: none;
     }
   }
 
   .text {
     font: 400 18px/1.2 'Futura PT', sans-serif;
     text-align: center;
-    padding: 40px 25px 60px;
+    padding: 60px 25px;
     height: 405px;
     position: relative;
-    z-index: 10;
 
     @include tablet {
       font: 400 24px/1.2 'Futura PT', sans-serif;
+      text-align: left;
+      width: 90%;
     }
   
     @include desktop {
       font: 400 26px/1.2 'Futura PT', sans-serif;
       text-align: left;
-      padding: 40px 200px 60px;
+      padding: 40px 200px;
     }
 
     hr {
@@ -81,5 +91,9 @@
       display: block;
       margin: 0 0 10px 0;
     }
+  }
+
+  .underline {
+    text-decoration: underline;
   }
 }
