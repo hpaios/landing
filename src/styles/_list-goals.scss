@@ -85,6 +85,10 @@
         text-transform: uppercase;
         text-align: center;
         width: 100%;
+        background: -webkit-linear-gradient(left, rgba(46, 49, 146, 1), rgba(36, 132, 198, 1));
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1px transparent;
+        color: transparent;
 
         @include tablet {
           text-align: left;
