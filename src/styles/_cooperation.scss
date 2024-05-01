@@ -2,6 +2,14 @@
 
 .cooperation {
   .items {
+
+    @include desktop {
+      display: flex;
+      flex-wrap: no-wrap;
+      overflow-x: auto;
+      padding: 0 0 0 50px;
+    }
+
     .item {
       background: rgba(var.$text-color, 0.05);
       border-radius: 4px;
@@ -21,9 +29,13 @@
         margin: 40px 0 0 20px;
       }
 
-      // @include desktop {
-      //   padding: 123px 53px 78px;
-      // }
+      @include desktop {
+        flex: 0 0 auto;
+        width: auto;
+        height: 250px;
+        max-width: 75%;
+        margin: 0 70px 0 0;
+      }
 
       span {
         font: 500 18px/1.2 'Futura PT', sans-serif;
