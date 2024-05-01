@@ -76,13 +76,13 @@
       </div>
       <div class="lang-buttons md">
         <span class="lang" id='switch-lang'></span>
-        <!-- <a href="javascript:void(0)" class="button active" id='ru-langs'>
+        <a href="javascript:void(0)" class="button active" id='ru-langs'>
           RU
         </a>
         <span>-</span>
         <a href="javascript:void(0)" class="button" id='ua-langs'>
           UA
-        </a> -->
+        </a>
       </div>
     </section>
     <div class="ticker">
@@ -746,13 +746,15 @@
         <div class="container">
           <h3 class='ru-lang'>Для быстрой связи заполните форму регистрации</h3>
           <h3 class='ua-lang'>Для швидкого зв'язку заповніть форму реєстрації</h3>
-          <form method="POST" action='#' name='submit-to-google-sheet'>
-            <input type="text" placeholder='Имя' class='ru-lang' name='name' required />
-            <!-- <input type="text" placeholder="Iм'я" class='ua-lang' name='name' required /> -->
-            <input type="tel" placeholder='Телефон (с мессенджерами)' class='ru-lang' name='phone' required />
-            <!-- <input type="tel" placeholder='Телефон (з месенджерами)' class='ua-lang' name='phone' required /> -->
-            <input type="email" placeholder='Email' name='email' required />
-            <button type='submit'>
+          <form method="POST" id='formik'>
+            <input type="text" placeholder='Имя' class='ru-lang' name='ru-name' required/>
+            <input type="text" placeholder="Iм'я" class='ua-lang' name='ua-name' required/>
+
+            <input type="tel" placeholder='Телефон (с мессенджерами)' class='ru-lang' name='ru-phone' required/>
+            <input type="tel" placeholder='Телефон (з месенджерами)' class='ua-lang' name='ua-phone' required/>
+
+            <input type="email" placeholder='Email' name='email' required/>
+            <button type='submit' onCLick="sendemail();">
               <span class='ru-lang'>Отправить</span>
               <span class='ua-lang'>Надіслати</span>
             </button>
@@ -797,38 +799,42 @@
       </div>
       </div>
     </footer>
-    <!-- <section>  
-      <div class="wrapper">
-        <div class="container">
-          <div class="circle-links">
-            <a href="#" class='circle-link xl'>
-              <img src="./images/hero-text-rus.svg" alt="Записаться на сессию-знакомство" class='ru-lang'/>
-              <img src="./images/hero-text-ua.svg" alt="Записатись на сесію-знайомство" class='ua-lang'/>
-            </a>
-          </div>
-          <br>
-          <div class="circle-links">
-            <a href="#" class='circle-link'>
-              <img src="./images/reg-text-ru.svg" alt="Регистрация" class='ru-lang'/>
-              <img src="./images/reg-text-ua.svg" alt="Реєстрація" class='ua-lang'>
-            </a>
-          </div>
-          <br>
-        </div>    
-      </div>  
-    </section> -->
+    <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-      const scriptURL = 'https://docs.google.com/spreadsheets/d/1jl3-drT12FVE651ZvVPxgPCJO0JHI9WooH2ON8-Wuws/edit?usp=sharing'
-      
-      const form = document.forms['submit-to-google-sheet']
-  
-      form.addEventListener('submit', e => {
-        console.log('aaa')
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
-         .catch(error => console.error('Error!', error.message))
-      })
+      function sendemail() {
+        emailjs.init({
+          publicKey: "m4xyOpa9OjRTx5kXk",
+        });
+
+        const formElements = document.getElementById('formik').elements;  
+        const postData = {};
+        for (let i=0; i<formElements.length; i++) {
+          if (formElements[i].type!="submit")
+          postData[formElements[i].name]=formElements[i].value;
+        }
+        
+        const contactDetail = {
+          name: postData['ru-name'] || postData['ua-name'],
+          phone: postData['ru-phone'] || postData['ua-phone'],
+          email: postData['email']
+        };
+
+        const lang = localStorage.getItem('lang');
+        const msg = lang === 'ua' ? 'Повідомлення відправлено!' : 'Сообщение отправлено!'
+        const msgError = lang === 'ua' ? 'Повідомлення НЕ відправлено!' : 'Сообщение НЕ отправлено!'
+
+        if (contactDetail.name && contactDetail.phone && contactDetail.email) {
+            emailjs.send('service_2zvtfpp', 'template_dcq7qqy', contactDetail).then(function (res) {
+            swal(msg, "", "success");
+          },
+          reason => {
+            swal(msgError, "", "error");
+          })
+        }
+      }
     </script>
   </body>
 </html>
