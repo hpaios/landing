@@ -50,11 +50,12 @@ var switchLang = document.getElementById('switch-lang');
 switchLang.addEventListener('click', toggleLang);
 
 // phone mask
-var input = document.querySelector(".tel");
+var phoneRU = document.getElementById('tel-ru');
+var phoneUA = document.getElementById('tel-ua');
 var prefixNumber = function prefixNumber(str) {
   return "".concat(str, " (");
 };
-input.addEventListener("input", function (e) {
+var addMask = function addMask(input) {
   var value = input.value.replace(/\D+/g, "");
   var numberLength = 11;
   var result = '+';
@@ -78,6 +79,12 @@ input.addEventListener("input", function (e) {
     result += value[_i3];
   }
   input.value = result;
+};
+phoneRU.addEventListener("input", function () {
+  return addMask(phoneRU);
+});
+phoneUA.addEventListener("input", function () {
+  return addMask(phoneUA);
 });
 /******/ })()
 ;
