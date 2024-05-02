@@ -54,17 +54,10 @@ var input = document.querySelector(".tel");
 var prefixNumber = function prefixNumber(str) {
   return "".concat(str, " (");
 };
-
-// ======================================
 input.addEventListener("input", function (e) {
   var value = input.value.replace(/\D+/g, "");
   var numberLength = 11;
-  var result;
-  if (input.value.includes("+8") || input.value[0] === "8") {
-    result = "";
-  } else {
-    result = "+";
-  }
+  var result = '+';
   for (var _i3 = 0; _i3 < value.length && _i3 < numberLength; _i3++) {
     switch (_i3) {
       case 0:
