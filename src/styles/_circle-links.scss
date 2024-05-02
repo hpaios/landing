@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: .5px solid var.$text-color;
+  border: 1px solid var.$text-color;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
 
@@ -27,7 +27,7 @@
     width: 79px;
     height: 79px;
     border-radius: 50%;
-    border: .5px solid var.$text-color;
+    border: 1px solid var.$text-color;
 
     @include tablet {
       width: 94px;
