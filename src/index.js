@@ -57,13 +57,14 @@ const switchLang = document.getElementById('switch-lang');
 switchLang.addEventListener('click',  toggleLang);
 
 // phone mask
-const input = document.querySelector(".tel");
+const phoneRU = document.getElementById('tel-ru');
+const phoneUA = document.getElementById('tel-ua');
 
 const prefixNumber = (str) => {
   return `${str} (`;
 };
 
-input.addEventListener("input", (e) => {
+const addMask = (input) => {
   const value = input.value.replace(/\D+/g, "");
   const numberLength = 11;
 
@@ -89,4 +90,7 @@ input.addEventListener("input", (e) => {
     result += value[i];
   }
   input.value = result;
-});
+}
+
+phoneRU.addEventListener("input", () => addMask(phoneRU));
+phoneUA.addEventListener("input", () => addMask(phoneUA));

@@ -102,7 +102,7 @@
             <li>
               <span>01</span>
               <div class='ru-lang'>250+ сессий с клиентами</div>
-              <div class='ua-lang'>250+ сесій із клієнтами</div>
+              <div class='ua-lang'>250+ сесій з клієнтами</div>
             </li>
             <li>
               <span>02</span>
@@ -183,14 +183,14 @@
           <h5 class='ru-lang'>
             <b>Как думаете, почему СЕГОДНЯ владельцы не только</b>
             мировых компаний
-            <span class='underline'>списка Fortune 500,</span> но и 
+            <span class='underline'>списка Fortune 500</span>, но и 
             <span class='underline'>основатели стартапов</span>
              привлекают 
             <b>к сотрудничеству коучей?</b> 
           </h5>
           <h5 class='ua-lang'>
-            <b>Як думаєте, чому СЬОГОДНІ власники не тільки</b> світових компаній
-            <span class='underline'>списку Fortune 500,</span>
+            <b>Як гадаєте, чому СЬОГОДНІ власники не тільки</b> світових компаній
+            <span class='underline'>списку Fortune 500</span>,
              а й
             <span class='underline'>засновники стартапів</span>
             залучають
@@ -226,8 +226,8 @@
         <div class="container">
           <h2 class='ru-lang'>Коучинг помогает</h2>
           <h2 class='ua-lang'>Коучинг допомагає</h2>
-          <h4 class='ru-lang'>Коучинг помогает в бизнесе, личной жизни и осознании своей ценности!</h4>
-          <h4 class='ua-lang'>Коучинг допомагає у бізнесі, особистому житті та усвідомленні своєї цінності!</h4>
+          <h4 class='ru-lang'>в бизнесе, личной жизни и осознании своей ценности!</h4>
+          <h4 class='ua-lang'>у бізнесі, особистому житті та усвідомленні своєї цінності!</h4>
           <div class="items">
             <div class="item item-1">
               <div class='ru-lang'>
@@ -447,7 +447,7 @@
               </div>
               <div class="item">
                 <span class='ru-lang'>Карьерный рост</span>
-                <span class='ua-lang'>Кар'єрний ріст</span>
+                <span class='ua-lang'>Кар'єрне зростання</span>
                 <p class='ru-lang'>
                   Поможет понять, где вы лучше себя проявите, раскрыть и усилить ваши сильные стороны. Построите свой путь к цели
                 </p>
@@ -688,7 +688,7 @@
           <div class="content">
             <img src="./src/images/hero-photo-4.png" alt="photo" class='hero-photo'>
             <h2 class='ru-lang'>Ускорьте процесс личностного и профессионального развития!</h2>
-            <h2 class='ua-lang'>Прискоріть процес особистісного та професійного розвитку!</h2>
+            <h2 class='ua-lang'>Пришвидшить процес особистісного та професійного розвитку!</h2>
             <h3 class='ru-lang'>С сертифицированным ICF коучем</h3>
             <h3 class='ua-lang'>З сертифікованим ICF коучем</h3>
             <div class='ru-lang reg'>
@@ -698,6 +698,7 @@
             </div>
             <div class='ua-lang reg'>
               <a href="#form">Замовити</a>
+              <br />
               cесію-знайомство
             </div>
             <div class="circle-links">
@@ -745,7 +746,9 @@
             <input type="text" placeholder='Имя' class='ru-lang' name='ru-name' id='ru-phone' required/>
             <input type="text" placeholder="Iм'я" class='ua-lang' name='ua-name' required/>
 
-            <input class="tel" value="" type="tel" name='phone' placeholder='Телефон' class='ru-lang'/>
+            <input class="tel-ru ru-lang" value="" type="tel" name='phone-ru' placeholder='Телефон (с мессенджерами)' id='tel-ru'/>
+            <input class="tel-ua ua-lang" value="" type="tel" name='phone-ua' placeholder='Телефон (з месенджерами)' id='tel-ua'/>
+
 
             <input type="email" placeholder='Email' name='email' required/>
             <button type='submit' onCLick="sendemail();">
@@ -758,14 +761,14 @@
                 <a href='#' target='_blank'>политики конфиденциальности</a>
               </span>
               <sp class='ua-lang'>
-                Натискаю кнопку, приймаю умови 
+                Натискаючи кнопку, приймаю умови 
                 <a href='#' target='_blank'>політики конфіденційності</a>
               </span>
             </div>
           </form>
           <div class="telegram">
             <div class='ru-lang'>Или напишите мне в телеграмм</div>
-            <div class='ua-lang'>або напишіть у Телеграм</div>
+            <div class='ua-lang'>або напишіть мені у Телеграм</div>
             <a href="https://t.me/podkopai_coach" target='_blank'></a>
           </div>
         </div>
@@ -812,7 +815,7 @@
         
         const contactDetail = {
           name: postData['ru-name'] || postData['ua-name'],
-          phone: postData['phone'],
+          phone: postData['phone-ru'] || postData['phone-ua'],
           email: postData['email']
         };
 

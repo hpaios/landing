@@ -70,8 +70,8 @@
   }
 
   img {
-    width: 114px;
-    height: 114px;
+    width: 113px;
+    height: 113px;
     height: 100%;
     animation: 15s linear 0s normal none infinite running rot;
   -webkit-animation: 15s linear 0s normal none infinite running rot;
@@ -105,9 +105,6 @@
   }
 
   &.xl {
-    // width: 139px;
-    // height: 139px;
-
     @include tablet {
       width: 172px;
       height: 172px;
@@ -134,8 +131,8 @@
     }
 
     img {
-      width: 120px;
-      height: 120px;
+      width: 119px;
+      height: 119px;
   
       @include tablet {
         width: 149px;
