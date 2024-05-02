@@ -14,7 +14,7 @@
     color: var.$text-color;
     text-align: center;
     width: 100%;
-    margin: 50px auto 40px;
+    margin: 20px auto 40px;
     padding: 0 30px;
     letter-spacing: 1px;
 
@@ -33,14 +33,14 @@
     @include desktop {
       font: 400 40px/1.2 'Futura PT', sans-serif;
       text-align: left;
-      width: 85%;
+      width: 90%;
     }
   }
 
   .container {
     @include desktop {
       background-image: url(./../images/bg-metrix.svg);
-      background-position: 20px 0;
+      background-position: 20px 80px;
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -76,7 +76,7 @@
     @include desktop {
       font: 400 26px/1.2 'Futura PT', sans-serif;
       text-align: left;
-      padding: 40px 200px;
+      padding: 115px 170px 40px;
     }
 
     hr {

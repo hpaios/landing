@@ -1,4 +1,11 @@
 .certificates {
+
+  h2 {
+    @include tablet {
+      margin: 10px 0 50px;
+    }
+  }
+
   .items {
     display: flex;
     flex-direction: column;

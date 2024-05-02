@@ -1,6 +1,16 @@
 @use 'variables' as var;
 
 .helps {
+
+  h2 {
+    margin: 0 auto;
+
+    @include tablet {
+      margin: 20px auto 0;
+    }
+
+  }
+
   .items {
     margin: 40px auto 0;
 
