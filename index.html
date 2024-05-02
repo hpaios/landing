@@ -742,11 +742,13 @@
           <h3 class='ru-lang'>Для быстрой связи заполните форму регистрации</h3>
           <h3 class='ua-lang'>Для швидкого зв'язку заповніть форму реєстрації</h3>
           <form method="POST" id='formik'>
-            <input type="text" placeholder='Имя' class='ru-lang' name='ru-name' required/>
+            <input type="text" placeholder='Имя' class='ru-lang' name='ru-name' id='ru-phone' required/>
             <input type="text" placeholder="Iм'я" class='ua-lang' name='ua-name' required/>
 
-            <input type="tel" placeholder='Телефон (с мессенджерами)' class='ru-lang' name='ru-phone' required/>
-            <input type="tel" placeholder='Телефон (з месенджерами)' class='ua-lang' name='ua-phone' required/>
+            <!-- <input type="tel" class='ru-lang' name='ru-phone' value='' required/>
+            <input type="tel" placeholder='Телефон (з месенджерами)' class='ua-lang' name='ua-phone' required/> -->
+
+            <input class="tel" value="" type="tel" name='phone' placeholder='Телефон' class='ru-lang'/>
 
             <input type="email" placeholder='Email' name='email' required/>
             <button type='submit' onCLick="sendemail();">
@@ -801,7 +803,7 @@
     <script>
       function sendemail() {
         emailjs.init({
-          publicKey: "m4xyOpa9OjRTx5kXk",
+          publicKey: "Qb2dshDDtUbLgCmR2",
         });
 
         const formElements = document.getElementById('formik').elements;  
@@ -813,16 +815,15 @@
         
         const contactDetail = {
           name: postData['ru-name'] || postData['ua-name'],
-          phone: postData['ru-phone'] || postData['ua-phone'],
+          phone: postData['phone'],
           email: postData['email']
         };
 
         const lang = localStorage.getItem('lang');
         const msg = lang === 'ua' ? 'Повідомлення відправлено!' : 'Сообщение отправлено!'
         const msgError = lang === 'ua' ? 'Повідомлення НЕ відправлено!' : 'Сообщение НЕ отправлено!'
-
         if (contactDetail.name && contactDetail.phone && contactDetail.email) {
-            emailjs.send('service_2zvtfpp', 'template_dcq7qqy', contactDetail).then(function (res) {
+            emailjs.send('service_veuocsx', 'template_69orpu1', contactDetail).then(function (res) {
             swal(msg, "", "success");
           },
           reason => {

@@ -55,3 +55,45 @@ ruLang.addEventListener('click', changeLanguageRU);
 
 const switchLang = document.getElementById('switch-lang');
 switchLang.addEventListener('click',  toggleLang);
+
+
+// phone mask
+const input = document.querySelector(".tel");
+
+const prefixNumber = (str) => {
+  return `${str} (`;
+};
+
+// ======================================
+input.addEventListener("input", (e) => {
+  const value = input.value.replace(/\D+/g, "");
+  const numberLength = 11;
+
+  let result;
+  if (input.value.includes("+8") || input.value[0] === "8") {
+    result = "";
+  } else {
+    result = "+";
+  }
+
+  for (let i = 0; i < value.length && i < numberLength; i++) {
+    switch (i) {
+      case 0:
+        result += prefixNumber(value[i]);
+        continue;
+      case 4:
+        result += ") ";
+        break;
+      case 7:
+        result += "-";
+        break;
+      case 9:
+        result += "-";
+        break;
+      default:
+        break;
+    }
+    result += value[i];
+  }
+  input.value = result;
+});
