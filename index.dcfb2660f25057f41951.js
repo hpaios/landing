@@ -48,5 +48,43 @@ var ruLang = document.getElementById('ru-lang');
 ruLang.addEventListener('click', changeLanguageRU);
 var switchLang = document.getElementById('switch-lang');
 switchLang.addEventListener('click', toggleLang);
+
+// phone mask
+var input = document.querySelector(".tel");
+var prefixNumber = function prefixNumber(str) {
+  return "".concat(str, " (");
+};
+
+// ======================================
+input.addEventListener("input", function (e) {
+  var value = input.value.replace(/\D+/g, "");
+  var numberLength = 11;
+  var result;
+  if (input.value.includes("+8") || input.value[0] === "8") {
+    result = "";
+  } else {
+    result = "+";
+  }
+  for (var _i3 = 0; _i3 < value.length && _i3 < numberLength; _i3++) {
+    switch (_i3) {
+      case 0:
+        result += prefixNumber(value[_i3]);
+        continue;
+      case 4:
+        result += ") ";
+        break;
+      case 7:
+        result += "-";
+        break;
+      case 9:
+        result += "-";
+        break;
+      default:
+        break;
+    }
+    result += value[_i3];
+  }
+  input.value = result;
+});
 /******/ })()
 ;
