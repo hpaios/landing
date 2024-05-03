@@ -14,7 +14,7 @@
     color: var.$text-color;
     text-align: center;
     width: 100%;
-    margin: 20px auto 40px;
+    margin: 60px auto 40px;
     padding: 0 30px;
     letter-spacing: 1px;
 
@@ -76,7 +76,7 @@
     @include desktop {
       font: 400 26px/1.2 'Futura PT', sans-serif;
       text-align: left;
-      padding: 115px 170px 40px;
+      padding: 80px 170px 40px;
     }
 
     hr {

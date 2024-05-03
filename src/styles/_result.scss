@@ -2,11 +2,11 @@
 
 .result {
   h2 {
-    margin: 0 auto 30px;
+    margin: 60px auto;
 
     @include tablet {
       text-align: center;
-      margin: 0 auto 30px;
+      margin: 60px auto 30px;
     }
 
     @include desktop {

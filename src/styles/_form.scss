@@ -6,7 +6,7 @@
     font: 700 24px/1.2 'Futura PT', sans-serif;
     text-transform: uppercase;
     text-align: center;
-    margin: 20px auto;
+    margin: 60px auto 20px;
   
     @include tablet {
       font: 700 38px/1.2 'Futura PT', sans-serif;
@@ -15,8 +15,8 @@
     @include desktop {
       font: 700 58px/1.2 'Futura PT', sans-serif;
       text-align: center;
-      margin: 20px auto 60px;
-      padding: 0 10%;
+      margin: 60px auto;
+      padding: 0 8%;
     }
   }
 

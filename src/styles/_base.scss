@@ -59,7 +59,7 @@ h2 {
   -webkit-text-stroke: 1px var.$text-color;
   -webkit-text-fill-color: var.$bg-color;
   width: 100%;
-  margin: 40px auto;
+  margin: 60px auto 40px;
 
   @include tablet {
     font: 700 50px/1.2 'Futura PT', sans-serif;
@@ -94,47 +94,3 @@ h4 {
 .underline {
   text-decoration: underline;
 }
-
-// .container {
-//   display: flex;
-//   border: 1px solid;
-//   width: 320px;
-//   height: 568px;
-//   scroll-snap-type: x mandatory;
-//   overflow-x: auto;
-//   white-space: nowrap;
-//   position: relative;
-//   -webkit-overflow-scrolling: touch;
-  
-//   &::-webkit-scrollbar {
-//     display: none;
-//   }
-// }
-
-// .item {
-//   margin: 10px;
-//   display: flex;
-//   flex-direction: row;
-//   scroll-behavior: smooth;
-//   scroll-snap-align: center;
-//   justify-content: center;
-//   align-items: center;
-  
-//   &:first-child {
-//     padding-left: 60px
-//   }
-  
-//   &:last-child {
-//     padding-right: 60px;
-//   }
-  
-//   div {
-//     display: flex;
-//     width: 200px;
-//     height: 300px;
-//     border: 1px solid red;
-//     border-radius: 15px;
-//     justify-content: center;
-//     align-items: center;
-//   }
-// }
