@@ -1,21 +1,45 @@
 @use 'variables' as var;
 
+$finalHeight: 700px;
+$finalWidth: 3 * $finalHeight;
+$scrollBarHeight: 1px;
+
+::-webkit-scrollbar {
+  width: $scrollBarHeight;
+  height: $scrollBarHeight;
+}
+
+::-webkit-scrollbar-button {
+  width: $scrollBarHeight;
+  height: $scrollBarHeight;
+}
+
 .cooperation {
+  .horizontal-scroll {
+    @include desktop {
+      position: relative;
+      top: 0;
+      height: 0;
+      width: 100%;
+      height: 314px;
+      overflow: hidden;
+    }
+  }
   .items {
     @include desktop {
-      display: flex;
-      width: 100%;
-      height: 270px;
-      scroll-snap-type: x mandatory;
-      overflow-x: auto;
-      white-space: nowrap;
-      position: relative;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 0 0 50px;
-      
-      &::-webkit-scrollbar {
-        display: none;
-      }
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: calc(#{$finalHeight} + #{$scrollBarHeight});
+      max-height: $finalWidth;
+      margin: 0;
+      padding-top: $scrollBarHeight;
+      overflow-y: auto;
+      overflow-x: hidden;
+      transform: rotate(-90deg) translateY(-$finalHeight);
+      transform-origin: right top;
+      padding: calc($finalHeight + 50px) 0 200px 0;
     }
 
     .item {
@@ -38,11 +62,12 @@
       }
 
       @include desktop {
-        margin: 0 60px 0 0;
-        scroll-behavior: smooth;
-        scroll-snap-align: left;
-        justify-content: start;
-        align-items: center;
+        transform: rotate(90deg);
+        transform-origin: right top;
+        width: $finalHeight;
+        height: $finalHeight;
+        margin: 0 0 80px 0;
+        border: none;
       }
 
       span {
@@ -103,7 +128,6 @@
 
         @include desktop {
           white-space: normal;
-          width: 800px;
         }
 
         li {
