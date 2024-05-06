@@ -43,6 +43,8 @@
       background-position: 20px 80px;
       background-size: cover;
       background-repeat: no-repeat;
+      padding: 0 0 140px 0;
+      position: relative;
     }
   }
 
@@ -70,13 +72,15 @@
     @include tablet {
       font: 400 24px/1.2 'Futura PT', sans-serif;
       text-align: left;
-      width: 90%;
+      width: 80%;
+      padding: 30px 25px 60px 65px;
     }
   
     @include desktop {
-      font: 400 26px/1.2 'Futura PT', sans-serif;
+      font: 400 24px/1.2 'Futura PT', sans-serif;
       text-align: left;
-      padding: 80px 170px 40px;
+      width: auto;
+      padding: 0;
     }
 
     hr {
@@ -89,7 +93,57 @@
     }
     .blue {
       display: block;
-      margin: 0 0 10px 0;
+      margin: 0 0 20px 0;
+    }
+
+    .first-part {
+      margin: 0 0 40px 0;
+      @include desktop {
+        margin: 130px 50px 40px 265px;
+        // margin: 0 0 0 220px;
+      }
+
+      .first-block {
+        @include desktop {
+          width: 80%;
+          display: inline-block;
+        }
+      }
+
+      .blue {
+        @include desktop {
+          width: 33%;
+        }
+      }
+    }
+
+    .second-part {
+      @include desktop {
+        margin: 50px 50px 40px 265px;
+        // margin: 0 0 0 200px;
+        position: relative;
+      }
+
+      .blue {
+        @include desktop {
+          width: 49%;
+        }
+      }
+      .rigth-block {
+        @include desktop {
+          width: 33%;
+          display: block;
+          margin: 35px 0 0 0;
+        }
+      }
+    }
+  }
+
+  .block {
+    @include desktop {
+      position: absolute;
+      right: 225px;
+      bottom: -105px;
     }
   }
 }
