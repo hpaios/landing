@@ -35,7 +35,7 @@ $scrollBarHeight: 1px;
         right: 0;
         top: 0;
         height: 100%;
-        width: 30px;
+        width: 50px;
         display: block;
         background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
       }
@@ -47,7 +47,7 @@ $scrollBarHeight: 1px;
         left: 0;
         top: 0;
         height: 100%;
-        width: 30px;
+        width: 50px;
         display: block;
         background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
         z-index: 100;
@@ -225,10 +225,11 @@ $scrollBarHeight: 1px;
     display: none;
 
     @include desktop {
-      left: -50px;
+      left: -1%;
       top: 50%;
       transform: translateY(-50%);
       display: inline-block;
+      z-index: 1000;
     }
   }
   
@@ -236,10 +237,11 @@ $scrollBarHeight: 1px;
     display: none;
 
     @include desktop {
-      right: -50px;
+      right: -1%;
       top: 50%;
       transform: translateY(-50%);
       display: inline-block;
+      z-index: 1000;
     }
   }
 }
