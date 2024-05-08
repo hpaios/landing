@@ -27,6 +27,7 @@
       @include tablet {
         font: 400 23px/1.2 'Futura PT', sans-serif;
         flex-basis: 48%;
+        text-align: left;
       }
 
       @include desktop {

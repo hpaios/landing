@@ -53,6 +53,9 @@
 
       @include tablet {
         flex-basis: 47%;
+        text-align: left;
+        align-items: start;
+        padding: 90px 25px 100px;
       }
 
       @include desktop {
