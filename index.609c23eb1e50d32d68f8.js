@@ -122,5 +122,22 @@ document.addEventListener("DOMContentLoaded", function () {
   leftButton.addEventListener("click", leftScroll);
   rightButton.addEventListener("click", rightScroll);
 });
+var ruBtn = document.getElementById('ru-lang');
+console.log('ruBtn', ruBtn);
+ruBtn.addEventListener('click', function () {
+  console.log('lang');
+  // window.location.href = 'index-ru.html';
+  window.location.reload(true);
+  window.location.hash = 'ru';
+  window.location.pathname = "index-ru.html";
+});
+var uaBtn = document.getElementById('ua-lang');
+uaBtn.addEventListener('click', function () {
+  console.log('lang');
+  // window.location.href = 'index-ru.html';
+  window.location.reload(true);
+  window.location.hash = '';
+  window.location.pathname = "index.html";
+});
 /******/ })()
 ;
