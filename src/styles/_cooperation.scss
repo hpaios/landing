@@ -17,30 +17,71 @@ $scrollBarHeight: 1px;
 .cooperation {
   .horizontal-scroll {
     @include desktop {
+      // position: relative;
+      // top: 0;
+      // height: 0;
+      // width: 100%;
+      // height: 314px;
+      // overflow: hidden;
       position: relative;
-      top: 0;
-      height: 0;
-      width: 100%;
-      height: 314px;
-      overflow: hidden;
+      // padding: 0px 30px;
+      // margin-top: 100px;
+    }
+
+    &:after {
+      @include desktop {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 30px;
+        display: block;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+      }
+    }
+    &:before {
+      @include desktop {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 30px;
+        display: block;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        z-index: 100;
+      }
     }
   }
   .items {
     @include desktop {
-      scrollbar-width: none;
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      width: calc(#{$finalHeight} + #{$scrollBarHeight});
-      max-height: $finalWidth;
-      margin: 0;
-      padding-top: $scrollBarHeight;
-      overflow-y: auto;
+      //scrollbar-width: none;
+      // position: absolute;
+      // display: block;
+      // top: 0;
+      // left: 0;
+      // width: calc(#{$finalHeight} + #{$scrollBarHeight});
+      // max-height: $finalWidth;
+      // margin: 0;
+      // padding-top: $scrollBarHeight;
+      // overflow-y: auto;
+      // overflow-x: hidden;
+      // transform: rotate(-90deg) translateY(-$finalHeight);
+      // transform-origin: right top;
+      // padding: calc($finalHeight + 50px) 0 200px 0;
+      // scrollbar-width: thin;          /* "auto" or "thin" */
+      // scrollbar-color: blue black; 
+      position: relative;
+      width: 100%;
+      padding: 0 50px 0 0;
+      height: auto;
+      display: flex;
+      flex-wrap: nowrap;
       overflow-x: hidden;
-      transform: rotate(-90deg) translateY(-$finalHeight);
-      transform-origin: right top;
-      padding: calc($finalHeight + 50px) 0 200px 0;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
     }
 
     .item {
@@ -63,12 +104,12 @@ $scrollBarHeight: 1px;
       }
 
       @include desktop {
-        transform: rotate(90deg);
-        transform-origin: right top;
-        width: $finalHeight;
-        height: $finalHeight;
-        margin: 0 0 80px 0;
-        border: none;
+        // transform: rotate(90deg);
+        // transform-origin: right top;
+        // width: $finalHeight;
+        // height: $finalHeight;
+        min-width: 700px;
+        margin: 0 0 0 80px;
         padding: 40px 40px 40px 70px;
       }
 
@@ -159,6 +200,46 @@ $scrollBarHeight: 1px;
           }
         }
       }
+    }
+  }
+
+  button {
+    @include desktop {
+      background: -webkit-linear-gradient(left, rgba(46, 49, 146, 1), rgba(36, 132, 198, 1));
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 1px transparent;
+      color: transparent;
+      font-size: 42px;
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      text-align: center;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .left {
+    display: none;
+
+    @include desktop {
+      left: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+    }
+  }
+  
+  .right {
+    display: none;
+
+    @include desktop {
+      right: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
     }
   }
 }

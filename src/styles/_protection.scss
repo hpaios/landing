@@ -48,6 +48,7 @@
       position: relative;
       box-shadow: inset 0px 4px 60px rgba(31,31,31,2);
       margin: 0 auto 20px;
+      z-index: 1;
 
       @include tablet {
         margin: 0 auto 40px;
@@ -85,8 +86,8 @@
         z-index: -1;
 
         @include tablet {
-          width: 125px;
-          height: 218px;
+          width: 110px;
+          height: 190px;
         }
       }
 

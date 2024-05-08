@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./src/images/favicon.ico">
     <title>Александр Подкопай - Коуч Предпринимателей и Руководителей</title>
+    <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <section class='hero' id='coach'>
@@ -518,7 +519,10 @@
           <h2 class='ru-lang'>Как проходит сотрудничество</h2>
           <h2 class='ua-lang'>Як відбувається співпраця</h2>
           <div class="horizontal-scroll">
-            <div class="items">
+            <button id="left" class='left'>
+              <i class="fas fa-angle-double-left"></i>
+            </button>
+            <div class="items" id="scroll-images">
               <div class="item">
                 <div class='circle'>
                   <span class="number">1</span>
@@ -574,6 +578,9 @@
                   <li class='ua-lang'>Підбиваємо підсумки роботи.</li>
               </div>
             </div>
+            <button id="right" class='right'>
+              <i class="fas fa-angle-double-right"></i>
+            </button>
           </div>
         </div>
       </div>

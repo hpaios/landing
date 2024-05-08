@@ -94,3 +94,45 @@ const addMask = (input) => {
 
 phoneRU.addEventListener("input", () => addMask(phoneRU));
 phoneUA.addEventListener("input", () => addMask(phoneUA));
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollImages = document.getElementById("scroll-images");
+  const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
+  const leftButton = document.getElementById("left");
+  const rightButton = document.getElementById("right");
+  
+  function checkScroll() {
+    const currentScroll = scrollImages.scrollLeft;
+    if (currentScroll === 0) {
+      leftButton.setAttribute("disabled", "true");
+      rightButton.removeAttribute("disabled");
+    } else if (currentScroll === scrollLength) {
+      rightButton.setAttribute("disabled", "true");
+      leftButton.removeAttribute("disabled");
+    } else {
+      leftButton.removeAttribute("disabled");
+      rightButton.removeAttribute("disabled");
+    }
+  }
+
+  scrollImages.addEventListener("scroll", checkScroll);
+  window.addEventListener("resize", checkScroll);
+  checkScroll();
+
+  function leftScroll() {
+    scrollImages.scrollBy({
+      left: -700,
+      behavior: "smooth"
+    });
+  }
+
+  function rightScroll() {
+    scrollImages.scrollBy({
+      left: 700,
+      behavior: "smooth"
+    });
+  }
+
+  leftButton.addEventListener("click", leftScroll);
+  rightButton.addEventListener("click", rightScroll);
+});
