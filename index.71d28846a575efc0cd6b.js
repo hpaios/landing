@@ -86,5 +86,41 @@ phoneRU.addEventListener("input", function () {
 phoneUA.addEventListener("input", function () {
   return addMask(phoneUA);
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var scrollImages = document.getElementById("scroll-images");
+  var scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
+  var leftButton = document.getElementById("left");
+  var rightButton = document.getElementById("right");
+  function checkScroll() {
+    var currentScroll = scrollImages.scrollLeft;
+    if (currentScroll === 0) {
+      leftButton.setAttribute("disabled", "true");
+      rightButton.removeAttribute("disabled");
+    } else if (currentScroll === scrollLength) {
+      rightButton.setAttribute("disabled", "true");
+      leftButton.removeAttribute("disabled");
+    } else {
+      leftButton.removeAttribute("disabled");
+      rightButton.removeAttribute("disabled");
+    }
+  }
+  scrollImages.addEventListener("scroll", checkScroll);
+  window.addEventListener("resize", checkScroll);
+  checkScroll();
+  function leftScroll() {
+    scrollImages.scrollBy({
+      left: -700,
+      behavior: "smooth"
+    });
+  }
+  function rightScroll() {
+    scrollImages.scrollBy({
+      left: 700,
+      behavior: "smooth"
+    });
+  }
+  leftButton.addEventListener("click", leftScroll);
+  rightButton.addEventListener("click", rightScroll);
+});
 /******/ })()
 ;
