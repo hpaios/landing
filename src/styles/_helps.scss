@@ -3,11 +3,7 @@
 .helps {
 
   h2 {
-    margin: 0 auto;
-
-    @include tablet {
-      margin: 40px auto 0;
-    }
+    margin: 40px auto 0;
   }
 
   .items {
