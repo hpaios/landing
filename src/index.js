@@ -136,3 +136,22 @@ document.addEventListener("DOMContentLoaded", function () {
   leftButton.addEventListener("click", leftScroll);
   rightButton.addEventListener("click", rightScroll);
 });
+
+const ruBtn = document.getElementById('ru-lang');
+console.log('ruBtn', ruBtn);
+ruBtn.addEventListener('click', () => {
+  console.log('lang');
+  // window.location.href = 'index-ru.html';
+  window.location.reload(true);
+  window.location.hash = 'ru';
+  window.location.pathname = "index-ru.html";
+});
+
+const uaBtn = document.getElementById('ua-lang');
+uaBtn.addEventListener('click', () => {
+  console.log('lang');
+  // window.location.href = 'index-ru.html';
+  window.location.reload(true);
+  window.location.hash = '';
+  window.location.pathname = "index.html";
+});
