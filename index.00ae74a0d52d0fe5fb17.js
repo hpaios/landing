@@ -17,6 +17,8 @@ var changeLanguageUA = function changeLanguageUA() {
   var ruLang = document.getElementsByClassName("ru-lang");
   var uaLang = document.getElementsByClassName("ua-lang");
   localStorage.setItem('lang', 'ua');
+  location.href = "".concat(window.location.pathname) + '#ua';
+  // location.href = `${window.location.pathname}`;
   nav.classList.remove('open');
   for (var _i = 0; _i < uaLang.length; _i++) {
     uaLang[_i].style.display = 'inline-block';
@@ -27,6 +29,9 @@ var changeLanguageRU = function changeLanguageRU() {
   var ruLang = document.getElementsByClassName("ru-lang");
   var uaLang = document.getElementsByClassName("ua-lang");
   localStorage.setItem('lang', 'ru');
+  location.href = "".concat(window.location.pathname) + '#ru';
+  // localStorage.setItem('lang', 'ru');
+  // location.reload();
   nav.classList.remove('open');
   for (var _i2 = 0; _i2 < uaLang.length; _i2++) {
     ruLang[_i2].style.display = 'inline-block';
@@ -122,22 +127,20 @@ document.addEventListener("DOMContentLoaded", function () {
   leftButton.addEventListener("click", leftScroll);
   rightButton.addEventListener("click", rightScroll);
 });
-var ruBtn = document.getElementById('ru-lang');
-console.log('ruBtn', ruBtn);
-ruBtn.addEventListener('click', function () {
-  console.log('lang');
-  // window.location.href = 'index-ru.html';
-  window.location.reload(true);
-  window.location.hash = 'ru';
-  window.location.pathname = "index-ru.html";
-});
-var uaBtn = document.getElementById('ua-lang');
-uaBtn.addEventListener('click', function () {
-  console.log('lang');
-  // window.location.href = 'index-ru.html';
-  window.location.reload(true);
-  window.location.hash = '';
-  window.location.pathname = "index.html";
-});
+
+// const ruBtn = document.getElementById('ru-lang');
+// console.log('ruBtn', ruBtn);
+// ruBtn.addEventListener('click', () => {
+//   location.href = `${window.location.pathname}` + 'ru';
+//   localStorage.setItem('lang', 'ru');
+//   location.reload();
+// });
+
+// const uaBtn = document.getElementById('ua-lang');
+// uaBtn.addEventListener('click', () => {
+//   location.href = ``;
+//   localStorage.setItem('lang', 'ua');
+//   location.reload();
+// });
 /******/ })()
 ;
