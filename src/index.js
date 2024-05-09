@@ -17,6 +17,8 @@ const changeLanguageUA = () => {
   const ruLang = document.getElementsByClassName("ru-lang");
   const uaLang = document.getElementsByClassName("ua-lang");
   localStorage.setItem('lang', 'ua');
+  location.href = `${window.location.pathname}` + '#ua';
+  // location.href = `${window.location.pathname}`;
   nav.classList.remove('open');
   for (let i = 0; i < uaLang.length; i++) {
     uaLang[i].style.display = 'inline-block';
@@ -28,6 +30,9 @@ const changeLanguageRU = () => {
   const ruLang = document.getElementsByClassName("ru-lang");
   const uaLang = document.getElementsByClassName("ua-lang");
   localStorage.setItem('lang', 'ru');
+  location.href = `${window.location.pathname}` + '#ru';
+  // localStorage.setItem('lang', 'ru');
+  // location.reload();
   nav.classList.remove('open');
   for (let i = 0; i < uaLang.length; i++) {
     ruLang[i].style.display = 'inline-block';
@@ -137,21 +142,17 @@ document.addEventListener("DOMContentLoaded", function () {
   rightButton.addEventListener("click", rightScroll);
 });
 
-const ruBtn = document.getElementById('ru-lang');
-console.log('ruBtn', ruBtn);
-ruBtn.addEventListener('click', () => {
-  console.log('lang');
-  // window.location.href = 'index-ru.html';
-  window.location.reload(true);
-  window.location.hash = 'ru';
-  window.location.pathname = "index-ru.html";
-});
+// const ruBtn = document.getElementById('ru-lang');
+// console.log('ruBtn', ruBtn);
+// ruBtn.addEventListener('click', () => {
+//   location.href = `${window.location.pathname}` + 'ru';
+//   localStorage.setItem('lang', 'ru');
+//   location.reload();
+// });
 
-const uaBtn = document.getElementById('ua-lang');
-uaBtn.addEventListener('click', () => {
-  console.log('lang');
-  // window.location.href = 'index-ru.html';
-  window.location.reload(true);
-  window.location.hash = '';
-  window.location.pathname = "index.html";
-});
+// const uaBtn = document.getElementById('ua-lang');
+// uaBtn.addEventListener('click', () => {
+//   location.href = ``;
+//   localStorage.setItem('lang', 'ua');
+//   location.reload();
+// });
