@@ -41,8 +41,11 @@ const changeLanguageRU = () => {
 };
 
 const setLang = () => {
-  const lang = localStorage.getItem('lang');
-  lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
+  // const lang = localStorage.getItem('lang');
+  // lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
+  const hash = window.location.hash;
+  const lang = hash.substring(1);
+  lang === 'ua' || lang === '' ? changeLanguageUA() : changeLanguageRU();
 }
 
 const toggleLang = () => {
