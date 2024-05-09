@@ -39,8 +39,11 @@ var changeLanguageRU = function changeLanguageRU() {
   }
 };
 var setLang = function setLang() {
-  var lang = localStorage.getItem('lang');
-  lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
+  // const lang = localStorage.getItem('lang');
+  // lang === 'ua' ? changeLanguageUA() : changeLanguageRU();
+  var hash = window.location.hash;
+  var lang = hash.substring(1);
+  lang === 'ua' || lang === '' ? changeLanguageUA() : changeLanguageRU();
 };
 var toggleLang = function toggleLang() {
   var lang = localStorage.getItem('lang');
